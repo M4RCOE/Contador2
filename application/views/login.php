@@ -11,7 +11,7 @@
 <body class="text-center">
 
 	<form class="form-signin" action="<?php echo site_url('App/login');?>" method="POST">
-    	<img class="mb-4" src="https://image.flaticon.com/icons/png/512/149/149071.png" alt="" width="72" height="72">
+    	<img class="mb-4" src="<?php echo base_url('img/sin_foto.png') ?>" alt="" width="72" height="72">
     	<h1 class="h3 mb-3 font-weight-normal">Inicio de sesión</h1>
     	<label for="username" class="sr-only">Usuario</label>
     	<input type="text" id="username" name="username" class="form-control" placeholder="Usuario" required="" autofocus="">

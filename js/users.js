@@ -105,6 +105,16 @@ function subir_foto_servidor(){
     insert_archivo(formData);
 }
 
+
+function editar_foto_servidor(){
+    let img = $("#editarFoto")[0].files[0];
+    let formData = new FormData();
+    let fecha = moment().format('YYYY-MM-DD HH:mm:ss');
+    formData.append('fecha',fecha);
+    formData.append('file',img);
+    insert_archivo(formData);
+}
+
 function insert_archivo(formData){
     $.ajax({
       data: formData,
@@ -113,6 +123,7 @@ function insert_archivo(formData){
       processData:false,
       url: base_url+"php/archivos/insert_archivo.php",
       success: function(res){
+        console.log(res);
         function select_ultimo_archivo(){
             $.ajax({
                 url: base_url+"php/archivos/select_ultimo_subido.php",

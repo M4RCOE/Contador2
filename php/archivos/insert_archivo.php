@@ -19,17 +19,18 @@
     }
     if(!empty($_FILES["file"]["type"])){
         $subida = substr_replace($targetPath,"",0,$pathControlador);
-        $extension = ".".substr_replace($_FILES["file"]["type"],"",0,strlen("image/"));
-        $nombre = substr_replace($fileName,"",strlen($fileName)-strlen($extension),strlen($extension));
+        $extension = ".".$file_extension;
+        $nombre = substr($fileName,0,(strlen($fileName)-strlen($extension)));
         $path = substr_replace($targetPath,"",strlen($targetPath)-strlen($nombre.$extension),strlen($nombre.$extension));
         $fecha = $_POST['fecha'];
 
         $sql = "CALL insertarArchivo('".$nombre."','".$extension."','".$path."','".$fecha."')";
 
-        echo $path.$nombre.$extension;
-
         if (($result = mysqli_query($conn, $sql)) === false) {
+            echo $result;
             die(mysqli_error($conn));
+        }else{
+            echo $result;
         }
     } 
 

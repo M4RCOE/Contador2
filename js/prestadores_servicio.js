@@ -18,6 +18,8 @@ inicializar_cronometros()
 
 //PETICION SELECT * FROM APP_USERS WHERE IDTIPO=2
 function select_users_servicio(){
+    let pantalla = $("#ModalCarga");
+    pantalla.fadeIn();
     $.ajax({
         url: base_url+"php/users/select_users_servicio.php",
         success: function(res){
@@ -74,7 +76,8 @@ function select_users_servicio(){
                 select_tareas_user(user.IDUSER);
             });
             select_contadores_iniciados();
-            inicializar_graficas();    
+            inicializar_graficas(); 
+            pantalla.fadeOut(1000);
         }
     })
 }
@@ -197,9 +200,6 @@ function creacion_modal_user_servicio(user){
             setTimeout(function(){
                 $('.ui-datepicker').css('z-index', 100);
             }, 0);            
-        },
-        onSelect: function(e){
-            
         }
     }).show();
     select_contadores_user(user.IDUSER);
@@ -579,8 +579,11 @@ function select_contadores_user(id){
                 let dates = [];
                 let contadores = JSON.parse(res);
                 contadores.forEach(contador => {
-                    dates.push(new Date(contador.FECHA));
+                    let fecha = new Date(contador.FECHAINICIO)
+                    dates.push(fecha);
+                    
                 });
+                console.log(dates);
                 $("#CALENDARIOMES"+id).multiDatesPicker('addDates', dates);
             }
         }

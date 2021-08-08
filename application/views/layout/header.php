@@ -60,6 +60,7 @@
                         <?php
                             }
                         ?>
+                        <li><a class="dropdown-item" href="#">Editar Usuario</a></li>
                         <li><a class="dropdown-item" href="<?php echo site_url('App/cerrarsesion') ?>">Cerrar Sesión</a></li>
                     </ul>
                 </div>

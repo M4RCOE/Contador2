@@ -39,6 +39,13 @@
             </div>
         </div>
     </div>
+    <div id="ModalCarga" class="modal-carga" tabindex="-1">
+        <div class="d-flex justify-content-center">
+            <div class="icono-carga spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
     <div>
         <input id="fechaInicioContador" type="text" placeholder="Fecha Inicio" hidden/>
         <input id="fechaContador" type="text" placeholder="Fecha" hidden/>

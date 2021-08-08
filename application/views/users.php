@@ -85,7 +85,7 @@
                                         </div>
                                         <br>
                                         <label for="insertFoto" class="mt-3">Foto:</label><br>
-                                        <input name="img" accept="image/*" class="text-center" id="insertFoto" type="file" oninput="subir_foto_servidor()"/>
+                                        <input name="img" accept="image/*" class="text-center" id="insertFoto" type="file" onchange="subir_foto_servidor()"/>
                                         <br>
                                         </form>
                                     </div>
@@ -144,7 +144,7 @@
                                         </div>
                                         <br>
                                         <label for="editarFoto" class="mt-3">Foto:</label><br>
-                                        <input name="img" accept="image/*" class="text-center" id="editarFoto" type="file" oninput="subir_foto_servidor()"/>
+                                        <input name="img" accept="image/*" class="text-center" id="editarFoto" type="file" onchange="editar_foto_servidor()"/>
                                         <br>
                                         </form>
                                     </div>
