@@ -116,7 +116,6 @@ function insert_archivo(formData){
                         /* let archivo = JSON.parse(res)[0];
                         $("#imagenRecienSubida").attr("src",base_url+"archivos/"+archivo.NOMBRE+archivo.EXTENSION);
                         $("#imagenRecienSubidaEditar").attr("src",base_url+"archivos/"+archivo.NOMBRE+archivo.EXTENSION); */
-                        
                     }
                 }
             })
@@ -160,7 +159,6 @@ function insert_usuario(formData){
       processData:false,
       url: base_url+"php/usuarios/insert_user.php",
       success: function(res){
-        console.log(res);
         $("#insertarModal").modal('hide');
         if(!$("#alerta").hasClass("alert-success")){
             $("#alerta").removeClass("alert-danger");

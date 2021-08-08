@@ -1,7 +1,7 @@
 <?php 
     include('conexion.php');
 
-    /* $uploadedFile = '';
+    $uploadedFile = '';
     if(!empty($_FILES["file"]["type"])){
         $temporary = explode(".", $_FILES["file"]["name"]);
         $file_extension = end($temporary);
@@ -29,8 +29,7 @@
         if (($result = mysqli_query($conn, $sql)) === false) {
             die(mysqli_error($conn));
         }
-    } */
-    echo $config['base_url'];
+    } 
 
     $conn->close();
 ?>

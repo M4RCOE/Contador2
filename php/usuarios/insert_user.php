@@ -1,7 +1,6 @@
 <?php 
-    include('conexion.php');
-
-    $uploadedFile = '';
+    /* include('conexion.php'); */
+    /* $uploadedFile = '';
     if(!empty($_FILES["file"]["type"])){
         $temporary = explode(".", $_FILES["file"]["name"]);
         $file_extension = end($temporary);
@@ -34,7 +33,9 @@
         
     if (($result = mysqli_query($conn, $sql)) === false) {
         die(mysqli_error($conn));
-    }
+    } */
+    /* substr_replace($actual,"",strlen($actual)-strlen('php/archivos'),strlen('php/archivos')); */
+    echo $_SERVER['DOCUMENT_ROOT'];
 
-    $conn->close();
+    /* $conn->close(); */
 ?>
