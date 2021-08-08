@@ -3,6 +3,12 @@ var menus;
 function select_users() {
 	$.ajax({
 		url: base_url + "php/usuarios/select_users.php",
+        beforeSend: function () {
+            
+        },
+        complete: function () {
+            
+        },
 		success: function (res) {
 			if(res!="0"){
                 let users = JSON.parse(res);

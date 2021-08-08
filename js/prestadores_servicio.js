@@ -38,6 +38,7 @@ function select_users_servicio(){
                 let botonContinuar = $("<input class='btn btn-success m-1 rounded-pill border border-2 border-dark' id='CONTINUARUSER"+user.IDUSER+"' style='width:105px; font-size:18px;' value='Continuar' hidden/>");
                 let botonCandado = $("<input class='btn btn-secondary m-1 rounded-circle border border-2 border-dark' id='CANDADOUSER"+user.IDUSER+"' style='width:50px; height:50px; font-size:18px;' value='🔒' hidden/>");
                 let botonPrincipal = $("<input class='btn btn-success m-1 rounded-pill border border-2 border-dark' id='INICIARUSER"+user.IDUSER+"' style='width:105px; font-size:18px;' value='Iniciar'/>");
+                let divbotones = $("<div class='d-flex justify-content-center align-items-center'></div>");
                 //Asignación onclick a botones
                 botonPrincipal.bind('click',function(){
                     accion_boton_iniciar(this)
@@ -62,9 +63,10 @@ function select_users_servicio(){
                 tr.append(nombre);
                 tr.append(username);
                 tr.append(email);
-                botones.append(botonContinuar);
-                botones.append(botonCandado);
-                botones.append(botonPrincipal);
+                divbotones.append(botonContinuar);
+                divbotones.append(botonCandado);
+                divbotones.append(botonPrincipal);
+                botones.append(divbotones);
                 tr.append(botones);
                 body_tabla_users_servicio.append(tr);
                 //Crea el modal del usuario de servicio
@@ -426,7 +428,7 @@ function insertar_NIP(){
 //VALIDA EL NIP QUE SE INGRESÓ EN EL MODAL NIP
 function validar_NIP(id,nip){
 	$.ajax({
-		url: base_url+"php/validar_nip_user.php",
+		url: base_url+"php/users/validar_nip_user.php",
 		type: "POST",
 		data: {id:id},
 		success: function (res) {
