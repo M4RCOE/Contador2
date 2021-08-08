@@ -107,15 +107,14 @@ function insert_archivo(formData){
       processData:false,
       url: base_url+"php/archivos/insert_archivo.php",
       success: function(res){
-        console.log(res);
         function select_ultimo_archivo(){
             $.ajax({
                 url: base_url+"php/archivos/select_ultimo_subido.php",
                 success: function(res){
                     if(res!="0"){
-                        /* let archivo = JSON.parse(res)[0];
+                        let archivo = JSON.parse(res)[0];
                         $("#imagenRecienSubida").attr("src",base_url+"archivos/"+archivo.NOMBRE+archivo.EXTENSION);
-                        $("#imagenRecienSubidaEditar").attr("src",base_url+"archivos/"+archivo.NOMBRE+archivo.EXTENSION); */
+                        $("#imagenRecienSubidaEditar").attr("src",base_url+"archivos/"+archivo.NOMBRE+archivo.EXTENSION);
                     }
                 }
             })
@@ -188,7 +187,6 @@ function select_menu_user(id){
         url: base_url+"php/usuarios/select_menu_user.php",
         success: function(res){
             let menus = JSON.parse(res);
-            console.log(menus);
             quitar_menu_user(menus[0].IDMENU);
         }
     })
@@ -251,7 +249,7 @@ function poner_user_menu(id_user,id_menu){
                 $("#alerta")
                     .fadeTo(500, 0)
                     .slideUp(1000, function () {
-                        $(this)[0].attr("hidden",true);
+                        $(this).attr("hidden",true);
                         $(this).fadeTo(500,100);
                           });
                   }, 2000);

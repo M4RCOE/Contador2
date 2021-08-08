@@ -1,6 +1,8 @@
 <?php 
     include('conexion.php');
-
+    $diractual = getcwd();
+    $pathControlador = substr_replace($diractual,"",strlen($diractual)-strlen('php/archivos'),strlen('php/archivos'));
+    
     $uploadedFile = '';
     if(!empty($_FILES["file"]["type"])){
         $temporary = explode(".", $_FILES["file"]["name"]);
@@ -9,14 +11,14 @@
         $valid_extensions = array("jpeg", "jpg", "png");
         if((($_FILES["file"]["type"] == "image/png") || ($_FILES["file"]["type"] == "image/jpg") || ($_FILES["file"]["type"] == "image/jpeg")) && in_array($file_extension, $valid_extensions)){
             $sourcePath = $_FILES['file']['tmp_name'];
-            $targetPath = $_SERVER['DOCUMENT_ROOT']."/Contador2/archivos/".$fileName;
+            $targetPath = $pathControlador."archivos/".$fileName;
             if(move_uploaded_file($sourcePath,$targetPath)){
                 $uploadedFile = $fileName;
             }
         }
     }
     if(!empty($_FILES["file"]["type"])){
-        $subida = substr_replace($targetPath,"",0,strlen($_SERVER['DOCUMENT_ROOT']."/Contador2/"));
+        $subida = substr_replace($targetPath,"",0,$pathControlador);
         $extension = ".".substr_replace($_FILES["file"]["type"],"",0,strlen("image/"));
         $nombre = substr_replace($fileName,"",strlen($fileName)-strlen($extension),strlen($extension));
         $path = substr_replace($targetPath,"",strlen($targetPath)-strlen($nombre.$extension),strlen($nombre.$extension));
@@ -32,4 +34,5 @@
     } 
 
     $conn->close();
+
 ?>

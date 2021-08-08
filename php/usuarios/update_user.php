@@ -1,5 +1,8 @@
 <?php 
     include('conexion.php');
+    $diractual = getcwd();
+    $pathControlador = substr_replace($diractual,"",strlen($diractual)-strlen('php/usuarios'),strlen('php/usuarios'));
+
 
     $uploadedFile = '';
     if(!empty($_FILES["file"]["type"])){
@@ -9,7 +12,7 @@
         $valid_extensions = array("jpeg", "jpg", "png");
         if((($_FILES["file"]["type"] == "image/png") || ($_FILES["file"]["type"] == "image/jpg") || ($_FILES["file"]["type"] == "image/jpeg")) && in_array($file_extension, $valid_extensions)){
             $sourcePath = $_FILES['file']['tmp_name'];
-            $targetPath = $_SERVER['DOCUMENT_ROOT']."/Contador2/img/".$fileName;
+            $targetPath = $pathControlador."img/".$fileName;
             if(move_uploaded_file($sourcePath,$targetPath)){
                 $uploadedFile = $fileName;
             }
@@ -25,7 +28,7 @@
     $nip = $_POST['nip'];
 
     if(!empty($_FILES["file"]["type"])){
-        $subida = substr_replace($targetPath,"",0,strlen($_SERVER['DOCUMENT_ROOT']."/Contador2/"));
+        $subida = "img/".$fileName;
         $sql = "CALL actualizarUser('".$username."','".$nombre."','".$apellidos."','".$email."','".$password."',".$nip.",'".$subida."',".$id.")"; 
     }else{
         $sql = "CALL actualizarUserSinFoto('".$username."','".$nombre."','".$apellidos."','".$email."','".$password."',".$nip.",".$id.")"; 
