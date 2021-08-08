@@ -15,6 +15,9 @@
     <!-- Importación JQuery UI  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <!-- Importación Miltiple Date Picker -->
+    <script src="https://cdn.rawgit.com/dubrox/Multiple-Dates-Picker-for-jQuery-UI/master/jquery-ui.multidatespicker.js"></script>
+    <link href="https://cdn.rawgit.com/dubrox/Multiple-Dates-Picker-for-jQuery-UI/master/jquery-ui.multidatespicker.css"/>
     <!--  Importación MomentJS  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>
@@ -24,6 +27,7 @@
     <link rel="stylesheet" href="<?php echo base_url('css/nip.css') ?>">
     <link rel="stylesheet" href="<?php echo base_url('css/prestadores_servicio.css') ?>">
     <link rel="stylesheet" href="<?php echo base_url('css/tareas.css') ?>">
+    <link rel="stylesheet" href="<?php echo base_url('css/calendarios.css') ?>">
     
 </head>
 <body>

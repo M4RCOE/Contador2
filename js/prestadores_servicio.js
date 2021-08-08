@@ -88,21 +88,19 @@ function creacion_modal_user_servicio(user){
     let modalheader = $("<div class='modal-header'></div>");
     let h5modalheader = $("<h5 class='modal-title col-11 text-center' id='MODALLABEL"+user.IDUSER+"'></h5>");
     let buttonmodalheader = $("<button type='button' class='btn-close col' data-bs-dismiss='modal' aria-label='Close'></button>");
-    modalheader.append(h5modalheader);
-    modalheader.append(buttonmodalheader);
+    modalheader.append([h5modalheader,buttonmodalheader]);
     let modalbody = $("<div class='modal-body d-flex justify-content-between align-items-center flex-column text-center'></div>");
     let navtabsmodalbody = $("<div class='nav nav-tabs' id='nav-tab-"+user.IDUSER+"' role='tablist'></div>");
     let tab1 = $("<a class='nav-link active' id='nav-tareas-tab-"+user.IDUSER+"' data-bs-toggle='tab' href='#nav-tareas-"+user.IDUSER+"' role='tab' aria-controls='nav-tareas' aria-selected='true'>Tareas</a>");
     let tab2 = $("<a class='nav-link' id='nav-dia-tab-"+user.IDUSER+"' data-bs-toggle='tab' href='#nav-dia-"+user.IDUSER+"' role='tab' aria-controls='nav-dia' aria-selected='false'>Día</a>");
     let tab3 = $("<a class='nav-link' id='nav-semana-tab-"+user.IDUSER+"' data-bs-toggle='tab' href='#nav-semana-"+user.IDUSER+"' role='tab' aria-controls='nav-semana' aria-selected='false'>Semana</a>");
-    navtabsmodalbody.append(tab1);
-    navtabsmodalbody.append(tab2);
-    navtabsmodalbody.append(tab3);
+    let tab4 = $("<a class='nav-link' id='nav-mes-tab-"+user.IDUSER+"' data-bs-toggle='tab' href='#nav-mes-"+user.IDUSER+"' role='tab' aria-controls='nav-mes' aria-selected='false'>Mes</a>");
+    navtabsmodalbody.append([tab1,tab2,tab3,tab4]);
     let tabcontents = $("<div class='tab-content'></div>");
 
     //Creación de sección de tareas
     let tabcontenttareas = $("<div class='tab-pane fade show active' id='nav-tareas-"+user.IDUSER+"' role='tabpanel' aria-labelledby='nav-tareas-tab'></div>")
-    let contenedortareas = $("<div style='width:800px; height:400px'></div>");
+    let contenedortareas = $("<div style='width:800px; height:450px;'></div>");
     let contenedortareas2 = $("<div class='d-flex justify-content-center p-0 m-0' style='width: 800px; height:500px'></div>");
     let contenedortareas3 = $("<div class='d-flex flex-column' style='width: 290px; height: 500px'></div>");
     let h2nuevatarea = $("<h2 class='pt-3 pb-3 text-primary'>Nueva Tarea</h2>");
@@ -118,7 +116,7 @@ function creacion_modal_user_servicio(user){
         insertar_nueva_tarea(user.IDUSER);
     });
     let divcalendario = $("<div class='d-flex justify-content-center pb-3'></div>");
-    let divdatepicker = $("<div id='CALENDARIONUEVATAREA"+user.IDUSER+"' class='d-flex justify-content-center' style='width:100px'></div>");
+    let divdatepicker = $("<div id='CALENDARIONUEVATAREA"+user.IDUSER+"' class='d-flex justify-content-center' style='width:130px'></div>");
     //Inicialización DatePicker
     divdatepicker.datepicker({
         beforeShow: function() {
@@ -133,11 +131,8 @@ function creacion_modal_user_servicio(user){
     }).show()
 
     //Agrega elementos a sección nuevas tareas
-    contenedorformulariotarea2.append(inputidusertarea);
-    contenedorformulariotarea2.append(inputfechatarea);
-    contenedorformulariotarea2.append(inputestadotarea);
-    divboton.append(inputtarea);
-    divboton.append(botonagregartarea);
+    contenedorformulariotarea2.append([inputidusertarea,inputfechatarea,inputestadotarea]);
+    divboton.append([inputtarea,botonagregartarea]);
     contenedorformulariotarea2.append(divboton);
     divcalendario.append(divdatepicker);
     contenedorformulariotarea2.append(divcalendario);
@@ -166,38 +161,51 @@ function creacion_modal_user_servicio(user){
     
     //Agrega elementos a sección de tareas
     divcontenedorscciontareas2.append(h2tareas);
-    divnavtabtareas.append(tabtareas1);
-    divnavtabtareas.append(tabtareas2);
-    divnavtabtareas.append(tabtareas3);
-    divnavtabtareas.append(tabtareas4);
-    tabcontenttareastab.append(tabcontenttareastab1);
-    tabcontenttareastab.append(tabcontenttareastab2);
-    tabcontenttareastab.append(tabcontenttareastab3);
-    tabcontenttareastab.append(tabcontenttareastab4);
-    divtabstareas.append(divnavtabtareas);
-    divtabstareas.append(tabcontenttareastab);
-    divcontenedorscciontareas.append(divcontenedorscciontareas2);
-    divcontenedorscciontareas.append(divtabstareas);
+    divnavtabtareas.append([tabtareas1,tabtareas2,tabtareas3,tabtareas4]);
+    tabcontenttareastab.append([tabcontenttareastab1,tabcontenttareastab2,tabcontenttareastab3,tabcontenttareastab4]);
+    divtabstareas.append([divnavtabtareas,tabcontenttareastab]);
+    divcontenedorscciontareas.append([divcontenedorscciontareas2,divtabstareas]);
     contenedortareas2.append(divcontenedorscciontareas);
 
     //Creación de sección de día
     let tabcontentdia = $("<div class='tab-pane fade' id='nav-dia-"+user.IDUSER+"' role='tabpanel' aria-labelledby='nav-dia-tab'></div>");
     let divcontenedordia = $("<div class='text-center d-flex flex-column justify-content-center' style='width:400px; height:400px'></div>");
-    let parrafocontador = $("<p id='MODALTIEMPOACTUALUSER"+user.IDUSER+"' style='font-size:20px'>00:00:00</p>");
-    divcontenedordia.append(parrafocontador);
+    let h2horasactuales = $("<h2 class='pt-1 pb-1 text-primary'>Tiempo Actual</h2>");
+    let parrafocontador = $("<p id='MODALTIEMPOACTUALUSER"+user.IDUSER+"' style='font-size:40px; font-weight:bold; '>00:00:00</p>");
+    divcontenedordia.append([h2horasactuales ,parrafocontador]);
     tabcontentdia.append(divcontenedordia);
 
     //Creación de sección de semana
     let tabcontentsemana = $("<div class='tab-pane fade' id='nav-semana-"+user.IDUSER+"' role='tabpanel' aria-labelledby='nav-semana-tab'></div>");
-    let divcontenedorsemana = $("<div class='mt-2' style='width:400px; height:380px'>");
+    let divcontenedorsemana = $("<div class='mt-2' style='width:380px; height:380px'>");
     let canvas = $("<canvas name='chart' id='GRAFICAUSER"+user.IDUSER+"' width='400' height='380'></canvas>");
     divcontenedorsemana.append(canvas);
     tabcontentsemana.append(divcontenedorsemana);
+
+    //Creación de sección de mes
+    let tabcontentsmes = $("<div class='tab-pane fade' id='nav-mes-"+user.IDUSER+"' role='tabpanel' aria-labelledby='nav-mes-tab'></div>");
+    let divcontenedormes = $("<div class='mt-2' style='width:400px; height:400px'>");
+    let h2mes = $("<h2 class='pt-1 pb-1 text-primary'>Dias trabajados</h2>");
+    let divcalendariomes = $("<div class='d-flex justify-content-center pb-3'></div>");
+    let divdatepickermes = $("<div id='CALENDARIOMES"+user.IDUSER+"' class='d-flex justify-content-center seccion-mes' style='width:160px'></div>");
+    divcalendariomes.append(divdatepickermes);
+    divcontenedormes.append([h2mes,divcalendariomes]);
+    tabcontentsmes.append(divcontenedormes);
+    //Inicialización DatePicker
+    divdatepickermes.multiDatesPicker({
+        beforeShow: function() {
+            setTimeout(function(){
+                $('.ui-datepicker').css('z-index', 100);
+            }, 0);            
+        },
+        onSelect: function(e){
+            
+        }
+    }).show();
+    select_contadores_user(user.IDUSER);
     
     //Agregar todas las secciones
-    tabcontents.append(tabcontenttareas);
-    tabcontents.append(tabcontentdia);
-    tabcontents.append(tabcontentsemana);
+    tabcontents.append([tabcontenttareas,tabcontentdia,tabcontentsemana,tabcontentsmes]);
     modalbody.append(navtabsmodalbody);
     modalbody.append(tabcontents);
     modalcontent.append(modalheader);
@@ -279,7 +287,6 @@ function select_tareas_user(id){
                     let inputid = $("<input id='INPUTIDTAREA"+tarea.IDTAREA+"' value='"+tarea.IDTAREA+"' hidden/>");
                     let labeltarea = $("<label class='pr-2'>Tarea: </label>");
                     let textareatarea = $("<textarea id='TEXTAREATAREA"+tarea.IDTAREA+"'>"+tarea.TAREA+"</textarea>");
-                    let salto = $("<br />");
                     let labelfechatarea = $("<label>Fecha: </label>");
                     let inpufecha = $("<input id='INPUTFECHATAREA"+tarea.IDTAREA+"' type='text' value='"+tarea.FECHA+"' hidden/>");
                     let divdatepicker = $("<div id='DATEPICKERTAREA"+tarea.IDTAREA+"' class='d-flex justify-content-center'></div>");
@@ -558,6 +565,24 @@ function modificar_tarea(id, iduser){
         type: "POST",
         success: function(res){
             select_tareas_user(iduser);
+        }
+    })
+}
+
+function select_contadores_user(id){
+    $.ajax({
+        url: base_url+"php/users/select_contadores_user.php",
+        data: {id:id},
+        type: "POST",
+        success: function(res){
+            if(res!="0"){
+                let dates = [];
+                let contadores = JSON.parse(res);
+                contadores.forEach(contador => {
+                    dates.push(new Date(contador.FECHA));
+                });
+                $("#CALENDARIOMES"+id).multiDatesPicker('addDates', dates);
+            }
         }
     })
 }

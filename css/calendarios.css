@@ -1,0 +1,127 @@
+/*Calendario Tareas*/
+.ui-datepicker-header {
+    background: #3399ff;
+    color: #ffffff;
+    font-family: 'Georgia, Verdana', sans-serif;
+   /*  border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: #111; */
+    font-weight: normal;
+}
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus, .ui-button:hover, .ui-button:focus {
+    background: orange;
+    color: #ffffff;
+    font-family: 'Georgia, Verdana', sans-serif;
+}
+
+.ui-state-highlight.ui-state-active.ui-state-hover:hover{
+    background: orange;
+    color: black;
+    font-family: 'Georgia, Verdana', sans-serif;
+}
+
+
+.ui-datepicker-calendar thead tr {
+    font-family: 'Georgia, Verdana', sans-serif;
+}
+
+.ui-datepicker-calendar tbody tr {
+    font-family: 'Georgia, Verdana', sans-serif;
+    color: black;
+    font-size: 18px;
+}
+
+.ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
+    background: #3c90e4;
+    color: white;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover{
+    background: #3c90e4;
+    color: white;
+}
+
+.ui-datepicker-calendar tbody tr td a{
+    text-align: center;
+
+}
+
+.ui-datepicker-calendar tbody tr td{
+    color: black;
+
+}
+
+.ui-state-default a,.ui-state-default a:link,.ui-state-default a:visited,a.ui-button,a:link.ui-button,a:visited.ui-button,.ui-button {
+	color:black !important;
+}
+
+.ui-datepicker td span, .ui-datepicker td a{
+    padding: 0em .2em 0em .2em;
+    color: black;
+}
+
+.ui-datepicker td span, .ui-datepicker td{
+    color:black;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
+    color:black;
+    border-radius: 50%;
+    border: 0;
+}
+
+.ui-datepicker-inline.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all{
+    padding: 10px;
+}
+
+
+ 
+/*Calendario Mes*/
+.seccion-mes .ui-datepicker { 
+    font-family: 'Georgia, Verdana', sans-serif;
+    font-size: 1.2rem;
+}
+.seccion-mes .ui-datepicker table {
+    width: 100%; 
+    font-family: 'Georgia, Verdana', sans-serif;
+    font-size: 1.2rem; 
+    border-collapse: collapse; 
+    margin:0 0 .4em; 
+}
+
+.seccion-mes .ui-datepicker-calendar tbody tr {
+    font-family: 'Georgia, Verdana', sans-serif;
+    color: black;
+    font-size: 1.5rem;
+}
+
+.seccion-mes .ui-datepicker .ui-datepicker-calendar tbody tr td.ui-state-highlight{
+    background: none;
+    border: white;
+}
+
+.seccion-mes .ui-datepicker .ui-datepicker-calendar tbody tr td.ui-state-highlight .ui-state-default{
+    background:#3c90e4;
+    color: black !important;
+}
+
+.seccion-mes .ui-datepicker .ui-datepicker-calendar tbody tr td.ui-state-highlight .ui-state-default:hover{
+    background:orange;
+    color: black !important;
+}
+
+.seccion-mes .ui-datepicker .ui-datepicker-calendar tbody tr td.ui-state-highlight .ui-widget-content .ui-state-default{
+    background-color: #3399ff;
+    color: black;
+}
+
+.seccion-mes .ui-datepicker .ui-datepicker-calendar tbody tr td.ui-state-highlight .ui-widget-content .ui-state-default.ui-state-highlight:hover{
+    background: orange;
+    color: black;
+    font-family: 'Georgia, Verdana', sans-serif;
+}
+
+.seccion-mes .ui-datepicker-inline.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all{
+    padding: 6px;
+}

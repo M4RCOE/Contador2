@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-08-2021 a las 06:44:12
+-- Tiempo de generación: 08-08-2021 a las 22:33:48
 -- Versión del servidor: 10.4.16-MariaDB
 -- Versión de PHP: 7.4.12
 
@@ -95,6 +95,11 @@ BEGIN
 	SELECT * FROM app_contador_users WHERE ESTADO=1;
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `obtenerContadoresUser` (IN `id` INT)  NO SQL
+BEGIN
+	SELECT * FROM app_contador_users WHERE app_contador_users.IDUSER=id;
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `obtenerDetallesMenu` (IN `id` INT)  NO SQL
 BEGIN
 	SELECT app_menu_detalles.* FROM app_menu_detalles JOIN app_menu ON app_menu_detalles.IDMENU=app_menu.IDMENU WHERE app_menu.IDMENU=id;
@@ -169,29 +174,11 @@ CREATE TABLE `app_archivos` (
 --
 
 INSERT INTO `app_archivos` (`IDARCHIVO`, `NOMBRE`, `EXTENSION`, `PATH`, `FECHA`) VALUES
-(1, '1628380951_163639_1628380951', '.jpeg', 'C:/xampp/htdocs/Contador2/archivos/', '2021-08-07 19:02:31'),
-(2, '1628381584_363848_1628381584', '.jpeg', 'C:/xampp/htdocs/Contador2/archivos/', '2021-08-07 19:13:04'),
-(3, '1628381628_386469_1628381628', '.jpeg', 'C:/xampp/htdocs/Contador2/archivos/', '2021-08-07 19:13:48'),
-(4, '1628381644_165255_1628381644', '.jpeg', 'C:/xampp/htdocs/Contador2/archivos/', '2021-08-07 19:14:04'),
-(5, '1628381668_796132_1628381668', '.jpeg', 'C:/xampp/htdocs/Contador2/archivos/', '2021-08-07 19:14:28'),
-(6, '1628381723_850716_1628381723', '.jpeg', 'C:/xampp/htdocs/Contador2/archivos/', '2021-08-07 19:15:23'),
-(7, '1628381786_922445_1628381786', '.jpeg', 'C:/xampp/htdocs/Contador2/archivos/', '2021-08-07 19:16:25'),
-(8, '1628381819_485389_1628381819', '.jpeg', 'C:/xampp/htdocs/Contador2/archivos/', '2021-08-07 19:16:59'),
-(9, '1628384630_343476_1628384630', '.png', 'C:/xampp/htdocs/Contador2/archivos/', '2021-08-07 20:03:50'),
-(10, '1628390653_215629_1628390653', '.png', 'C:/xampp/htdocs/Contador2/archivos/', '2021-08-07 21:44:13'),
-(11, '1628390822_916829_1628390822', '.png', 'C:/xampp/htdocs/Contador2/archivos/', '2021-08-07 21:47:02'),
-(12, '1628396881_252205_1628396881', '.jpeg', 'C:/xampp/htdocs/Contador2/archivos/', '2021-08-07 23:28:00'),
-(13, '1628397091_486666_1628397091', '.jpeg', 'C:/xampp/htdocs/Contador2/archivos/', '2021-08-07 23:31:31'),
-(14, '1628397142_442999_1628397142', '.jpeg', 'C:/xampp/htdocs/Contador2/archivos/', '2021-08-07 23:32:22'),
-(15, '1628397186_709967_1628397186', '.jpeg', 'C:/xampp/htdocs/Contador2/archivos/', '2021-08-07 23:33:06'),
-(16, '1628397296_683140_1628397296', '.jpeg', 'C:/xampp/htdocs/Contador2/archivos/', '2021-08-07 23:34:56'),
-(17, '1628397363_373928_1628397363', '.jpeg', 'C:/xampp/htdocs/Contador2/archivos/', '2021-08-07 23:36:03'),
-(18, '1628397418_985834_1628397418', '.jpeg', 'C:/xampp/htdocs/Contador2/archivos/', '2021-08-07 23:36:58'),
-(19, '1628397440_284176_1628397440', '.jpeg', 'C:/xampp/htdocs/Contador2/archivos/', '2021-08-07 23:37:20'),
-(20, '1628397501_100460_1628397501', '.jpeg', 'C:/xampp/htdocs/Contador2/archivos/', '2021-08-07 23:38:21'),
-(21, '1628397564_546156_1628397564', '.jpeg', 'C:/xampp/htdocs/Contador2/archivos/', '2021-08-07 23:39:24'),
-(22, '1628397671_585951_1628397671', '.jpeg', 'C:/xampp/htdocs/Contador2/archivos/', '2021-08-07 23:41:11'),
-(23, '1628397795_383740_1628397795', '.jpeg', 'C:/xampp/htdocs/Contador2/archivos/', '2021-08-07 23:43:15');
+(27, '1628398379_809070_1628398379', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-07 23:52:59'),
+(28, '1628398538_264639_1628398538', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-07 23:55:38'),
+(29, '1628398794_548302_1628398794', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-07 23:59:54'),
+(30, '1628399091_576553_1628399091', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-08 00:04:50'),
+(31, '1628399109_115545_1628399109', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-08 00:05:09');
 
 -- --------------------------------------------------------
 
@@ -238,7 +225,8 @@ INSERT INTO `app_contador_users` (`IDCONTADOR`, `FECHAINICIO`, `FECHA`, `FECHAFI
 (8, '2021-08-06 23:04:41', '2021-08-06', '2021-08-06 23:04:54', '00:00:12', 0x30, 1),
 (9, '2021-08-07 01:46:47', '2021-08-07', '2021-08-07 01:46:53', '00:00:06', 0x30, 1),
 (10, '2021-08-07 02:02:55', '2021-08-07', '2021-08-07 02:11:29', '00:08:34', 0x30, 1),
-(11, '2021-08-07 02:11:37', '2021-08-07', '2021-08-07 02:11:47', '00:00:09', 0x30, 1);
+(11, '2021-08-07 02:11:37', '2021-08-07', '2021-08-07 02:11:47', '00:00:09', 0x30, 1),
+(12, '2021-08-07 00:41:32', '2021-08-07', NULL, NULL, 0x31, 1);
 
 -- --------------------------------------------------------
 
@@ -337,7 +325,8 @@ CREATE TABLE `app_tareas` (
 INSERT INTO `app_tareas` (`IDTAREA`, `TAREA`, `FECHA`, `COMENTARIO`, `IDESTADO`, `IDUSER`) VALUES
 (1, 'Crear base de datos', '2021-08-06', '', 1, 1),
 (2, 'Modificar página', '2021-08-07', '', 2, 1),
-(3, 'Checar que funcione', '2021-08-07', NULL, 1, 1);
+(3, 'Checar que funcione', '2021-08-07', NULL, 1, 1),
+(4, 'Modificar gráfica', '2021-08-18', NULL, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -426,7 +415,7 @@ ALTER TABLE `app_users`
 -- AUTO_INCREMENT de la tabla `app_archivos`
 --
 ALTER TABLE `app_archivos`
-  MODIFY `IDARCHIVO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `IDARCHIVO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT de la tabla `app_catalogo_tipo_users`
@@ -438,7 +427,7 @@ ALTER TABLE `app_catalogo_tipo_users`
 -- AUTO_INCREMENT de la tabla `app_contador_users`
 --
 ALTER TABLE `app_contador_users`
-  MODIFY `IDCONTADOR` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `IDCONTADOR` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `app_estado_tareas`
@@ -462,13 +451,13 @@ ALTER TABLE `app_menu_detalles`
 -- AUTO_INCREMENT de la tabla `app_tareas`
 --
 ALTER TABLE `app_tareas`
-  MODIFY `IDTAREA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `IDTAREA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `app_users`
 --
 ALTER TABLE `app_users`
-  MODIFY `IDUSER` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `IDUSER` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,15 +1,16 @@
 var ctx = {};
+
 function inicializar_graficas(){
 	for (chart of $('[name="chart"]')) {
 		ctx[chart.id] = $("#"+chart.id)[0].getContext("2d");
 		charts[chart.id] = new Chart(ctx[chart.id], {
-			type: "bar",
+			type: "line",
 			data: {
-				labels: ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes"],
+				labels: ["Domingo","Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado"],
 				datasets: [
 					{
 						label: "Horas trabajadas",
-						data: [0,0,0,0,0],
+						data: [0,0,0,0,0,0,0],
 						backgroundColor: [
 							"rgba(255, 99, 132, 0.2)",
 							"rgba(54, 162, 235, 0.2)",
@@ -29,12 +30,47 @@ function inicializar_graficas(){
 				],
 			},
 			options: {
+				plugins: {
+					legend: {
+						labels: {
+							font: {
+								size: 26,
+								weight: 'bold'
+							},
+							color: '#3c90e4'
+						}
+					}
+				},
 				scales: {
 					y: {
-						beginAtZero: true,
+						min: 0,
+						max: 50,
+						grid: {
+							display: false,
+						},
+						ticks:{
+							color: 'black'
+						},
+						
+					},
+					x: {
+						grid: {
+							display: false,
+						},
+						ticks:{
+							color: 'black'
+						},
 					},
 				},
 			},
 		});
 	}	
 }
+
+function obtenerSemanaActual(){
+	let iniciosemana = moment().startOf('week').format('YYYY-MM-DD');
+	let finsemana   = moment().endOf('week').format('YYYY-MM-DD');
+	console.log(iniciosemana, finsemana);
+}
+
+obtenerSemanaActual();
