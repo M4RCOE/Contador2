@@ -1,0 +1,9 @@
+input.nip{
+    height:100px; 
+    width:100px; 
+    text-align:center;
+  }
+  input.nip:focus{
+    height: 150px;
+    width: 150px;
+  }

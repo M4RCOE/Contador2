@@ -1,0 +1,20 @@
+.estado1{ 
+	color: green !important;
+} 
+
+.estado2{
+	color: blue !important;
+} 
+
+.estado4{
+	color: yellow !important;
+} 
+
+.estado3{
+	color: red !important;
+}
+
+.tarea:hover{
+	background-color: orange !important;
+	border-radius: 5px !important;
+}
