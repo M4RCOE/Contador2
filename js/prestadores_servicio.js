@@ -196,6 +196,7 @@ function creacion_modal_user_servicio(user){
     tabcontentsmes.append(divcontenedormes);
     //Inicialización DatePicker
     divdatepickermes.multiDatesPicker({
+        disabled: true,
         beforeShow: function() {
             setTimeout(function(){
                 $('.ui-datepicker').css('z-index', 100);

@@ -125,3 +125,12 @@
 .seccion-mes .ui-datepicker-inline.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all{
     padding: 6px;
 }
+.seccion-mes .ui-datepicker .ui-datepicker-calendar tbody tr td.ui-datepicker-unselectable.ui-state-disabled{
+    opacity: 1;
+    text-align: center;
+}
+
+.seccion-mes .ui-datepicker-calendar tbody tr td span{
+    text-align: center;
+
+}
