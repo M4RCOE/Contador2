@@ -8,7 +8,7 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                        <li class="breadcrumb-item"><a href="<?php echo base_url('') ?>">Inicio</a></li>
                         <li class="breadcrumb-item active">Usuarios</li>
                     </ol>
                 </div><!-- /.col -->
@@ -50,7 +50,10 @@
                                 <div class="modal-body">
                                     <div class="text-center">
                                         <form id="formAgregarUser" method="POST" enctype="multipart/form-data">
-                                        <img id="imagenRecienSubida" src="<?php echo base_url('archivos/sin_foto.png') ?>" width="80px" height="80px" class="rounded-circle mt-3"><br><br>
+                                        <label for="insertFoto">
+                                            <img id="imagenRecienSubida" src="<?php echo base_url('archivos/sin_foto.png') ?>" width="80px" height="80px" class="rounded-circle mt-3">
+                                        </label>
+                                        <br><br>
                                         <div class="d-flex justify-content-around">
                                             <div>
                                                 <label for="insertNombre">Nombre:</label><br>
@@ -108,7 +111,10 @@
                                 <div class="modal-body">
                                     <div class="text-center">
                                         <form id="formEditarUser" method="POST" enctype="multipart/form-data">
-                                        <img id="imagenRecienSubidaEditar" src="<?php echo base_url('archivos/sin_foto.png') ?>" width="80px" height="80px" class="rounded-circle mt-3"><br><br>
+                                        <label for="editarFoto">
+                                            <img id="imagenRecienSubidaEditar" src="<?php echo base_url('archivos/sin_foto.png') ?>" width="80px" height="80px" class="rounded-circle mt-3">
+                                        </label>
+                                        <br><br>
                                         <div class="d-flex justify-content-around">
                                             <input id="editarUserID" type="text" hidden/>
                                             <div>

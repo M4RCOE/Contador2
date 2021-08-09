@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-08-2021 a las 22:33:48
+-- Tiempo de generación: 09-08-2021 a las 19:50:35
 -- Versión del servidor: 10.4.16-MariaDB
 -- Versión de PHP: 7.4.12
 
@@ -178,7 +178,43 @@ INSERT INTO `app_archivos` (`IDARCHIVO`, `NOMBRE`, `EXTENSION`, `PATH`, `FECHA`)
 (28, '1628398538_264639_1628398538', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-07 23:55:38'),
 (29, '1628398794_548302_1628398794', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-07 23:59:54'),
 (30, '1628399091_576553_1628399091', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-08 00:04:50'),
-(31, '1628399109_115545_1628399109', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-08 00:05:09');
+(31, '1628399109_115545_1628399109', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-08 00:05:09'),
+(32, '1628463409_287210_1628463409', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-08 17:56:49'),
+(33, '1628463674_462426_1628463674', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:01:14'),
+(34, '1628463677_512087_162846367', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:01:17'),
+(35, '1628463695_605553_1628463695', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:01:35'),
+(36, '1628463703_202257_162846370', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:01:43'),
+(37, '1628463885_895656_1628463885', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:04:45'),
+(38, '1628463891_176851_162846389', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:04:51'),
+(39, '1628464035_252734_1628464035', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:07:15'),
+(40, '1628464129_481047_1628464129', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:08:49'),
+(41, '1628464137_948940_162846413', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:08:57'),
+(42, '1628464482_758914_1628464482', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:14:42'),
+(43, '1628464557_355907_1628464557', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:15:57'),
+(44, '1628464699_712113_1628464699', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:18:19'),
+(45, '1628464704_144376_1628464704', '.jpg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:18:24'),
+(46, '1628464708_541479_1628464708', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:18:28'),
+(47, '1628464711_108700_1628464711', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:18:31'),
+(48, '1628464840_367883_1628464840', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:20:40'),
+(49, '1628464845_431564_1628464845', '.jpg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:20:45'),
+(50, '1628464852_400829_1628464852', '.jpg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:20:52'),
+(51, '1628464857_840395_1628464857', '.jpg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:20:57'),
+(52, '1628464860_802479_1628464860', '.jpg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:21:00'),
+(53, '1628465063_186576_1628465063', '.jpg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:24:23'),
+(54, '1628465222_589059_1628465222', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:27:02'),
+(55, '1628465226_804744_1628465226', '.jpg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:27:06'),
+(56, '1628465234_462609_1628465234', '.jpg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:27:14'),
+(57, '1628465239_584696_1628465239', '.jpg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:27:19'),
+(58, '1628465332_738677_1628465332', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:28:52'),
+(59, '1628465348_696427_1628465348', '.jpg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:29:08'),
+(60, '1628465355_919619_1628465355', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:29:15'),
+(61, '1628465359_127144_1628465359', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:29:19'),
+(62, '1628465364_943557_1628465364', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:29:24'),
+(63, '1628465731_720296_1628465731', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:35:31'),
+(64, '1628465734_119447_1628465734', '.jpg', 'C:xampphtdocsContador2archivos/', '2021-08-08 18:35:34'),
+(65, '1628520131_228295_1628520131', '.png', 'C:xampphtdocsContador2archivos/', '2021-08-09 09:42:11'),
+(66, '1628529677_330220_1628529677', '.jpeg', 'C:xampphtdocsContador2archivos/', '2021-08-09 12:21:17'),
+(67, '1628529689_575503_1628529689', '.png', 'C:xampphtdocsContador2archivos/', '2021-08-09 12:21:29');
 
 -- --------------------------------------------------------
 
@@ -273,7 +309,10 @@ INSERT INTO `app_menu` (`IDMENU`, `NOMBRE`, `FECHA`, `IDUSER`) VALUES
 (5, 'Palacio', '2021-08-07 11:41:00', NULL),
 (6, 'Prueba', '2021-08-07 13:54:17', NULL),
 (7, 'MenuAdmin', '2021-08-07 13:54:52', NULL),
-(8, 'MenuPrueba3', '2021-08-07 13:56:02', NULL);
+(8, 'MenuPrueba3', '2021-08-07 13:56:02', NULL),
+(9, 'MenuPrueba', '2021-08-08 17:57:17', NULL),
+(10, 'Menu', '2021-08-08 17:58:39', NULL),
+(11, 'wefw', '2021-08-09 09:31:49', NULL);
 
 -- --------------------------------------------------------
 
@@ -301,7 +340,15 @@ INSERT INTO `app_menu_detalles` (`IDDETALLE`, `NOMBRE`, `ENLACE`, `ICONO`, `NIVE
 (676, 'Electrónicos', '#', 'fas fa-desktop', 0, 1),
 (677, 'Computadoras', 'https://www.google.com', 'fas fa-desktop', 1, 1),
 (678, 'Televisiones', '#', 'fas fa-desktop', 1, 1),
-(679, 'Microondas', '#', 'fas fa-desktop', 1, 1);
+(679, 'Microondas', '#', 'fas fa-desktop', 1, 1),
+(695, 'Hola', '#', 'fas fa-car', 0, 10),
+(696, 'Hola2', '#', 'fas fa-envelope', 1, 10),
+(698, 'Hola', '#', '', 0, 9),
+(699, 'Hola2', '#', '', 0, 9),
+(700, 'Hola2.1', '#', 'fas fa-archive', 1, 9),
+(701, '', '#', '', 0, 9),
+(706, 'Prueba', '#', '', 0, 11),
+(707, 'Prueba', '#', '', 1, 11);
 
 -- --------------------------------------------------------
 
@@ -326,7 +373,9 @@ INSERT INTO `app_tareas` (`IDTAREA`, `TAREA`, `FECHA`, `COMENTARIO`, `IDESTADO`,
 (1, 'Crear base de datos', '2021-08-06', '', 1, 1),
 (2, 'Modificar página', '2021-08-07', '', 2, 1),
 (3, 'Checar que funcione', '2021-08-07', NULL, 1, 1),
-(4, 'Modificar gráfica', '2021-08-18', NULL, 1, 1);
+(4, 'Modificar gráfica', '2021-08-18', NULL, 1, 1),
+(5, 'Checar funcionamiento', '2021-08-11', NULL, 1, 1),
+(6, 'Hacer esto', '2021-08-11', '', 3, 1);
 
 -- --------------------------------------------------------
 
@@ -415,7 +464,7 @@ ALTER TABLE `app_users`
 -- AUTO_INCREMENT de la tabla `app_archivos`
 --
 ALTER TABLE `app_archivos`
-  MODIFY `IDARCHIVO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `IDARCHIVO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT de la tabla `app_catalogo_tipo_users`
@@ -439,25 +488,25 @@ ALTER TABLE `app_estado_tareas`
 -- AUTO_INCREMENT de la tabla `app_menu`
 --
 ALTER TABLE `app_menu`
-  MODIFY `IDMENU` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `IDMENU` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `app_menu_detalles`
 --
 ALTER TABLE `app_menu_detalles`
-  MODIFY `IDDETALLE` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=680;
+  MODIFY `IDDETALLE` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=708;
 
 --
 -- AUTO_INCREMENT de la tabla `app_tareas`
 --
 ALTER TABLE `app_tareas`
-  MODIFY `IDTAREA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `IDTAREA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `app_users`
 --
 ALTER TABLE `app_users`
-  MODIFY `IDUSER` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `IDUSER` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

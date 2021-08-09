@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="<?php echo base_url('css/iconos.css') ?>" />
     <link rel="stylesheet" href="<?php echo base_url('css/estilos.css') ?>" />
     <link rel="stylesheet" href="<?php echo base_url('css/prestadores_servicio.css') ?>">
-
+    
     <script src="<?php echo base_url('js/inicializacion_variables.js') ?>"></script> 
     
 </head>
@@ -49,13 +49,16 @@
                         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                     </li>
                     <li class="nav-item d-none d-sm-inline-block">
-                        <a href="<?php echo base_url('') ?>" class="nav-link">Home</a>
+                        <a href="<?php echo base_url('') ?>" class="nav-link">Inicio</a>
                     </li>
                 </ul>
                 <!-- Right navbar links -->
                 <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                        <a class="nav-link" data-widget="sitios" href="<?php echo site_url('App/sitios') ?>" role="button"><i class="fas fa-map-marker-alt"></i></a>
+                    </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-widget="fullscreen" href="#" role="button"><i class="fas fa-expand-arrows-alt"></i></a>
+                        <a class="nav-link" data-widget="categorias" href="<?php echo site_url('App/categorias') ?>" role="button"><i class="fas fa-book"></i></a>
                     </li>
                     <li class="nav-item">
                         <?php 
@@ -66,6 +69,9 @@
                                 <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
                             </svg>
                         </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-widget="fullscreen" href="#" role="button"><i class="fas fa-expand-arrows-alt"></i></a>
                     </li>
                 </ul>
                 <ul class="navbar-nav me-5">

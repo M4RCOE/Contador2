@@ -69,5 +69,31 @@ class App extends CI_Controller {
 		}		
 	}
 
+	public function categorias()
+	{
+		if($this->session->userdata('user')){
+			$this->load->view('dashboard/header');
+			$this->load->view('dashboard/aside');
+			$this->load->view('categorias');
+			$this->load->view('dashboard/footer');
+		}else{
+			redirect('home');
+		}		
+	}
+
+	public function sitios()
+	{
+		if($this->session->userdata('user')){
+			$this->load->view('dashboard/header');
+			$this->load->view('dashboard/aside');
+			$this->load->view('sitios');
+			$this->load->view('dashboard/footer');
+		}else{
+			redirect('home');
+		}		
+	}
+
+
+
 	
 }

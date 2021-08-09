@@ -9,7 +9,7 @@
 <!-- ./wrapper -->
 <!-- REQUIRED SCRIPTS -->
     <script src="<?php echo base_url('js/menus.js') ?>"></script> 
-    <script src="<?php echo base_url('js/users.js') ?>"></script> 
+    <script src="<?php echo base_url('js/users.js') ?>"></script>
     <!-- AdminLTE -->
     <script src="<?php echo base_url('dist/js/adminlte.js') ?>"></script>
 </body>

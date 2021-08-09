@@ -328,3 +328,43 @@ function update_user(formData){
         }
     })
 }
+
+$('#insertarModal').on('shown.bs.modal', function () {
+    $('#insertNombreUser').trigger('focus');
+})
+
+$("#insertNombreUser").on('keyup', function (e) {
+    if (e.keyCode===13) {
+        $("#insertApellidos").focus();
+    }
+});
+
+$("#insertApellidos").on('keyup', function (e) {
+    if (e.keyCode===13) {
+        $("#insertUser").focus();
+    }
+});
+
+$("#insertUser").on('keyup', function (e) {
+    if (e.keyCode===13) {
+        $("#insertContraseña").focus();
+    }
+});
+
+$("#insertContraseña").on('keyup', function (e) {
+    if (e.keyCode===13) {
+        $("#insertCorreo").focus();
+    }
+});
+
+$("#insertCorreo").on('keyup', function (e) {
+    if (e.keyCode===13) {
+        $("#insertNIPUser").focus();
+    }
+});
+
+$("#insertNIPUser").on('keyup', function (e) {
+    if (e.keyCode===13) {
+        $("#insertFoto").focus();
+    }
+});

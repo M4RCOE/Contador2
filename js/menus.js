@@ -400,3 +400,21 @@ function insert_detalles_menu(dicc) {
     },
   });
 }
+
+$("#input_nombre_menu").on('keyup', function (e) {
+  if (e.keyCode===13) {
+    insert_menu();
+  }
+});
+
+$("#inputURL").on('keyup', function (e) {
+  if (e.keyCode===13) {
+    $("#inputTextoURL").focus();
+  }
+});
+
+$("#inputTextoURL").on('keyup', function (e) {
+  if (e.keyCode===13) {
+    agregar_submenu();
+  }
+});

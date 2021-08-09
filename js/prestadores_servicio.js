@@ -375,6 +375,8 @@ function accion_boton_iniciar(botonhtml){
     if (timeouts[id] == 0) {
         $("#idUserNIP").val(id);
         $("#ModalNIP").modal('show');
+        
+        
 	} else {
         //En caso de que si tenga pone lo necesario para que esté seguro
 		$("#CANDADOUSER"+id).attr('hidden',true);
@@ -408,6 +410,10 @@ function cronometro_funcionando(id) {
 	timeouts[id] = setTimeout("cronometro_funcionando(" + id + ")", 1000);
 }
 
+//Al abrir ModalNIP se pone focus en el primer input
+$('#ModalNIP').on('shown.bs.modal', function () {
+    $('#nip1').trigger('focus')
+})
 
 //SE EJECUTA AL DAR CLICK AL BOTON CANDADO
 function accion_boton_candado(botonhtml){
@@ -420,6 +426,39 @@ function accion_boton_candado(botonhtml){
 		$("#ModalNIP").modal('show');	        	
 	}
 }
+
+$("#nip1").on('keyup', function (e) {
+    if ((e.keyCode>47 && e.keyCode<58)||(e.keyCode>95 && e.keyCode<106)) {
+        $('#nip2').focus();
+    }else if(e.keyCode===8){
+        $("#nip1").val("");
+    }
+});
+$("#nip2").on('keyup', function (e) {
+    if ((e.keyCode>47 && e.keyCode<58)||(e.keyCode>95 && e.keyCode<106)) {
+        $('#nip3').focus();
+    }else if(e.keyCode===8){
+        $("#nip2").val("");
+        $('#nip1').focus();
+    }
+});
+$("#nip3").on('keyup', function (e) {
+    if ((e.keyCode>47 && e.keyCode<58)||(e.keyCode>95 && e.keyCode<106)) {
+        $('#nip4').focus();
+    }else if(e.keyCode===8){
+        $("#nip3").val("");
+        $('#nip2').focus();
+    }
+});
+$("#nip4").on('keyup', function (e) {
+    if ((e.keyCode>47 && e.keyCode<58)||(e.keyCode>95 && e.keyCode<106)) {
+        insertar_NIP();
+    }else if(e.keyCode===8){
+        $("#nip4").val("");
+        $('#nip3').focus();
+    }
+});
+
 
 //SE EJECUTA AL INGRESAR TODOS LOS NIP DEL MODAL NIP
 function insertar_NIP(){
@@ -440,7 +479,6 @@ function validar_NIP(id,nip){
 		data: {id:id},
 		success: function (res) {
 			let resnip = JSON.parse(res);
-            console.log(resnip);
 			if(nip === resnip[0].NIP){ 
 				$("#ModalNIP").modal('hide');
                 if($("#INICIARUSER"+id).attr('hidden')){
@@ -462,7 +500,9 @@ function validar_NIP(id,nip){
 		            $("#CANDADOUSER"+id).removeAttr('hidden');
 		            boton.attr('hidden',true);
                 }
-			}
+			}else{
+                $("#nip1").focus();
+            }
 		},
 	}); 
 }
@@ -583,7 +623,6 @@ function select_contadores_user(id){
                     dates.push(fecha);
                     
                 });
-                console.log(dates);
                 $("#CALENDARIOMES"+id).multiDatesPicker('addDates', dates);
             }
         }

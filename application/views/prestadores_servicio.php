@@ -28,10 +28,10 @@
                 </div>
                 <div class="modal-body text-center bg-dark border border-1 border-dark">
                     <input id="idUserNIP" hidden/>
-                    <input id="nip1" type="password" class="nip border border-3 border-white fs-2" maxlength=1 oninput="$('#nip2').focus()"/>
-                    <input id="nip2" type="password" class="nip border border-3 border-white fs-2" maxlength=1 oninput="$('#nip3').focus()"/>
-                    <input id="nip3" type="password" class="nip border border-3 border-white fs-2" maxlength=1 oninput="$('#nip4').focus()"/>
-                    <input id="nip4" type="password" class="nip border border-3 border-white fs-2" maxlength=1 oninput="insertar_NIP()"/>
+                    <input id="nip1" type="password" class="nip border border-3 border-white fs-2" maxlength=1 />
+                    <input id="nip2" type="password" class="nip border border-3 border-white fs-2" maxlength=1 />
+                    <input id="nip3" type="password" class="nip border border-3 border-white fs-2" maxlength=1 />
+                    <input id="nip4" type="password" class="nip border border-3 border-white fs-2" maxlength=1 />
                 </div>
                 <div class="modal-footer justify-content-center bg-dark border border-1 border-dark">
                     <button type="button" class="btn text-white fs-2" data-bs-dismiss="modal">Cerrar</button>
