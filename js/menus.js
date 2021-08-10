@@ -112,7 +112,7 @@ function elegir_select_menu(selecthtml) {
   $("#input_id_menu").val(select.val());
   select_detalles_menu(select.val())
 }
-
+var nivel;
 //CONTINUACIÓN DE LA ELECCIÓN DE ALGUN MENÚ
 function select_detalles_menu(id) {
   $.ajax({
@@ -153,6 +153,7 @@ function select_detalles_menu(id) {
             $("#input_nombre_detalle").val(menus[i].NOMBRE);
             $("#input_url_detalle").val(menus[i].ENLACE);
             $("#input_icono_detalle").val(menus[i].ICONO);
+            $("#input_nivel_detalle").val($(this).parents('ol').length-1);
             $("#ModalEditarDetalleMenu").modal('show');
           });
           div.addClass("contenido");
@@ -196,14 +197,15 @@ function modificar_detalle(){
   let nombre = $("#input_nombre_detalle").val();
   let url = $("#input_url_detalle").val();
   let icono = $("#input_icono_detalle").val();
+  let nivel = $("#input_nivel_detalle").val();
   $.ajax({
-    data: {IDDETALLE: id, NOMBRE: nombre, ENLACE:url, ICONO:icono},
+    data: {IDDETALLE: id, NOMBRE: nombre, ENLACE:url, ICONO:icono, NIVEL:nivel},
     type: "POST",
     url: base_url+"php/menus/modificar_detalle.php",
     success: function(res){
-      select_detalles_menu($("#input_id_menu").val());
       $("#ModalEditarDetalleMenu").modal('hide');
-      llenarSubMenusNav();
+      /* select_detalles_menu($("#input_id_menu").val()); */
+      /* llenarSubMenusNav(); */
     }
   })
 }

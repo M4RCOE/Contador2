@@ -196,7 +196,6 @@ function creacion_modal_user_servicio(user){
     tabcontentsmes.append(divcontenedormes);
     //Inicialización DatePicker
     divdatepickermes.multiDatesPicker({
-        disabled: true,
         beforeShow: function() {
             setTimeout(function(){
                 $('.ui-datepicker').css('z-index', 100);
@@ -254,7 +253,6 @@ function select_tareas_user(id){
                             modificar = pendiente;
                         break;
                     }
-
 
                     //Creación de div con tarea 
                     let divtarea = $("<div id='TAREA"+tarea.IDTAREA+"' class='tarea border-bottom border-2 border-dark mt-2 rounded bg-light d-flex align-items-center justify-content-around' style='height:auto; width:95%;' data-toggle='modal' data-id='' data-target='#ModalTarea"+tarea.IDTAREA+"'></div>");
@@ -620,9 +618,17 @@ function select_contadores_user(id){
                 let dates = [];
                 let contadores = JSON.parse(res);
                 contadores.forEach(contador => {
-                    let fecha = new Date(contador.FECHAINICIO)
-                    dates.push(fecha);
-                    
+                    let fechainicio = moment(contador.FECHAINICIO);
+                    let fechafin = moment(contador.FECHAFIN);
+                    let fecha = fechainicio;
+                    console.log(fechafin);
+                    if(isNaN(fechafin)){
+                        fechafin = moment();
+                    }
+                    while(fecha<=fechafin){
+                        dates.push(new Date(fecha.format('YYYY-MM-DD HH:mm:ss'))); 
+                        fecha = moment(fecha.add(1,'d'));
+                    }                                 
                 });
                 $("#CALENDARIOMES"+id).multiDatesPicker('addDates', dates);
             }

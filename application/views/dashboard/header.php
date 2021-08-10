@@ -54,7 +54,10 @@
                 </ul>
                 <!-- Right navbar links -->
                 <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
+                    <li class="nav-item">
+                        <a class="nav-link" data-widget="ma_usuarios" href="<?php echo site_url('App/ma_usuarios') ?>" role="button"><i class="fas fa-users"></i></a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" data-widget="sitios" href="<?php echo site_url('App/sitios') ?>" role="button"><i class="fas fa-map-marker-alt"></i></a>
                     </li>
                     <li class="nav-item">
@@ -79,7 +82,7 @@
                 if($this->session->has_userdata('user')){
                   $user = $this->session->userdata('user');
             ?>
-                    <div class="nav-item dropdown mr-3">
+                    <div class="nav-item dropdown mr-4">
                         <a class="nav-link dropdown-toggle text-dark mr-2" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <?php echo $user['USERNAME'] ?>
                         </a>

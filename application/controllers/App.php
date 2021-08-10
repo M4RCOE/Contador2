@@ -93,7 +93,16 @@ class App extends CI_Controller {
 		}		
 	}
 
-
-
+	public function ma_usuarios()
+	{
+		if($this->session->userdata('user')){
+			$this->load->view('dashboard/header');
+			$this->load->view('dashboard/aside');
+			$this->load->view('usuarios');
+			$this->load->view('dashboard/footer');
+		}else{
+			redirect('home');
+		}		
+	}
 	
 }

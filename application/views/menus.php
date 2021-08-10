@@ -130,6 +130,7 @@
                         </div>
                         <div class="modal-body text-center">
                             <input id="input_id_detalle" value="" hidden/>
+                            <input id="input_nivel_detalle" value=""/>
                             <label>Nombre:</label><br>
                             <input id="input_nombre_detalle" type="text"/><br>
                             <label>URL:</label><br>
