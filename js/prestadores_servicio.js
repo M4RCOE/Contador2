@@ -621,7 +621,6 @@ function select_contadores_user(id){
                     let fechainicio = moment(contador.FECHAINICIO);
                     let fechafin = moment(contador.FECHAFIN);
                     let fecha = fechainicio;
-                    console.log(fechafin);
                     if(isNaN(fechafin)){
                         fechafin = moment();
                     }
